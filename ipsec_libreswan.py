@@ -22,6 +22,7 @@ for line in ipsec.split('\n'):
     else:
       tunnel_status = 'UP'
     data.append({'#TUNNEL':tunnel_name,'#STATUS':tunnel_status})
-    discovery = {'data':data}
-    print(json.dumps(discovery, indent=2))
+
+discovery = {'data':data}
+print(json.dumps(discovery, indent=2))
   
