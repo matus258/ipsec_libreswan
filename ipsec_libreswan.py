@@ -15,6 +15,11 @@ for line in ipsec.split('\n'):
     parsed_line.remove("")
   if parsed_line:
     tunnel_name=parsed_line[1]
-    print(parsed_line[len(parsed_line)-1])
-
+    tunnel_id_status = parsed_line[len(parsed_line)-1]
+    if tunnel_id_status == '#0':
+      tunnel_status = 'Down'
+    else:
+      tunnel_status = 'UP'
+    print(tunnel_id_status)
+    print(tunnel_status)
   
