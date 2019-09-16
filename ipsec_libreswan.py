@@ -3,7 +3,8 @@ import subprocess
 import json
 import sys
 import re
-
+discovery={}
+data = []
 text_output = ''
 json_output = {}
 ipsec = subprocess.Popen(('sudo','ipsec','auto','status'), stdout=subprocess.PIPE)
@@ -20,6 +21,7 @@ for line in ipsec.split('\n'):
       tunnel_status = 'Down'
     else:
       tunnel_status = 'UP'
-    print(tunnel_id_status)
-    print(tunnel_status)
+    data.append({'#TUNNEL':tunnel_name,'#STATUS':tunnel_status})
+    discovery = {'data':data}
+    print(json.dumps(discovery, indent=2))
   
