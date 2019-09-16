@@ -15,6 +15,6 @@ for line in ipsec.split('\n'):
     parsed_line.remove("")
   if parsed_line:
     tunnel_name=parsed_line[1]
-    print(parsed_line[len(parsed_line-1)])
+    print(parsed_line[len(parsed_line)-1])
 
   
