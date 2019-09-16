@@ -13,6 +13,6 @@ for line in ipsec.split('\n'):
   parsed_line = re.split(r'\s+', re.sub(r'(:|=|,|{.*}|\[\d+\])', '', line))
   while('' in parsed_line):
     parsed_line.remove("")
-  print(parsed_line)
+  print(parsed_line[1])
 
   
